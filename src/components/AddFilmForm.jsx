@@ -36,6 +36,11 @@ const AddFilmForm = () => {
       director,
       rating: Number(rating),
     };
+
+    setFilmName('');
+    setYear('');
+    setDirector('');
+    setRating('');
     
     dispatch(ActionCreator.addFilm(oldFilmsData, filmData))
   }
@@ -51,6 +56,7 @@ const AddFilmForm = () => {
           placeholder="Название фильма"
           value={filmName}
           onChange={handleChangeFilmName}
+          autoComplete="off"
         />
       </div>
       <div className="form-group">
@@ -62,6 +68,7 @@ const AddFilmForm = () => {
           placeholder="Год"
           value={year}
           onChange={handleChangeYear}
+          autoComplete="off"
         />
       </div>
       <div className="form-group">
@@ -73,6 +80,7 @@ const AddFilmForm = () => {
           placeholder="Режиссер"
           value={director}
           onChange={handleChangeDirector}
+          autoComplete="off"
         />
       </div>
       <div className="form-group">
@@ -86,6 +94,7 @@ const AddFilmForm = () => {
           placeholder="Рейтинг"
           value={rating}
           onChange={handleChangeRating}
+          autoComplete="off"
         />
       </div>
       <button type="submit" className="btn btn-primary">Добавить фильм</button>
