@@ -1,7 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { ActionCreator } from '../reducer';
+import './FilmCard.css';
+
+import { ActionCreator } from '../../reducer';
 
 const FilmCard = ({film}) => {
   const {title = '', year = '', director = '', rating = ''} = film;
@@ -13,7 +15,7 @@ const FilmCard = ({film}) => {
   }
 
   return (
-    <div className="card">
+    <div className="card m-2">
       <div className="card-body">
         <h5 className="card-title">{title}</h5>
         <p className="card-text">{year}</p>

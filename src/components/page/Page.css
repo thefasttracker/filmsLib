@@ -1,0 +1,21 @@
+.add-form {
+  width: 33%;
+}
+
+.film-list {
+  width: 66%;
+}
+
+@media (max-width: 480px) {
+  .page-container {
+    flex-direction: column;
+  }
+
+  .add-form {
+    width: auto;
+  }
+  
+  .film-list {
+    width: auto;
+  }
+}

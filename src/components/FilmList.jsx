@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import { ActionCreator } from '../reducer';
-import FilmCard from './FilmCard.jsx';
+import FilmCard from './film-card/FilmCard.jsx';
 
 const FilmList = () => {
   const filmsData = useSelector(state => state.films.sort((a, b) => b.rating - a.rating));

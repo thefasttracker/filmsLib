@@ -3,7 +3,7 @@ import {Route, Switch, Redirect} from 'react-router-dom';
 
 import ProtectedRoute from './protected-route';
 import Login from './Login.jsx';
-import Page from './Page.jsx';
+import Page from './page/Page.jsx';
 
 const Routes = () => {
   return (
