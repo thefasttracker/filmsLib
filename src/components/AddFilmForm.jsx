@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 } from 'uuid';
 
 import { ActionCreator } from '../reducer';
 
@@ -35,6 +36,7 @@ const AddFilmForm = () => {
       year: Number(year),
       director,
       rating: Number(rating),
+      id: v4()
     };
 
     setFilmName('');

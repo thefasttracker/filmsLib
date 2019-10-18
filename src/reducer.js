@@ -24,9 +24,9 @@ const ActionCreator = {
     type: Actions.ADD_FILM,
     payload: [...oldFilmsData, filmData],
   }),
-  deleteFilm: (title) => ({
+  deleteFilm: (id) => ({
     type: Actions.DELETE_FILM,
-    payload: title,
+    payload: id,
   }),
 };
 
@@ -49,7 +49,7 @@ const reducer = (state = initialState, action) => {
 
     case Actions.DELETE_FILM: {
       const newFilms = state.films.filter(
-        (film) => film.title !== action.payload,
+        (film) => film.id !== action.payload,
       );
 
       return Object.assign({}, state, {

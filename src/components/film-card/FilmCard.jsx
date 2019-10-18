@@ -6,12 +6,12 @@ import './FilmCard.css';
 import { ActionCreator } from '../../reducer';
 
 const FilmCard = ({film}) => {
-  const {title = '', year = '', director = '', rating = ''} = film;
+  const {title = '', year = '', director = '', rating = '', id} = film;
 
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(ActionCreator.deleteFilm(title))
+    dispatch(ActionCreator.deleteFilm(id))
   }
 
   return (

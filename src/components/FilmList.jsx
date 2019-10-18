@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { v4 } from 'uuid'
 
 import { ActionCreator } from '../reducer';
 import FilmCard from './film-card/FilmCard.jsx';
@@ -14,7 +15,13 @@ const FilmList = () => {
   const getFilmData = async () => {
     const response = await fetch('https://api.myjson.com/bins/f0xme');
     const myJson = await response.json();
-    dispatch(ActionCreator.loadFilms(myJson.data));
+    const moviesList = myJson.data.map(movie => {
+        return {
+            ...movie,
+            id: v4()
+        }
+    });
+    dispatch(ActionCreator.loadFilms(moviesList));
   };
 
   useEffect(() => {
@@ -23,7 +30,7 @@ const FilmList = () => {
 
   return (
     <>
-      {filmsData.map((film, index) => (<FilmCard key={`film-card${index}`} film={film} />))}
+      {filmsData.map((film) => (<FilmCard key={film.id} film={film} />))}
     </>
   );
 }

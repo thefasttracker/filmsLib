@@ -61,7 +61,7 @@ const Login = (props) => {
         <form className="login__form form" onSubmit={handleSubmit}>
 
           {error ?
-            <div class="alert alert-danger">
+            <div className="alert alert-danger">
               {error}
             </div>
           : null}
